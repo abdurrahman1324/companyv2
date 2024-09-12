@@ -1,0 +1,1035 @@
+/* General Reset */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    overflow-x: hidden; /* Mencegah scroll horizontal */
+}
+
+/* Navbar Styling */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Agar navbar tetap berada di atas elemen lainnya */
+    background-color: #ffffff; /* Warna latar belakang */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow */
+    padding: 10px 20px; /* Padding untuk navbar */
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: #333333; /* Warna teks link default */
+    padding: 10px 15px; /* Padding untuk link */
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+}
+
+.navbar-nav .nav-link.active {
+    color: #007bff; /* Warna teks link aktif */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #66b2ff; /* Warna teks saat di-hover */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 60px; /* Adjust based on the height of your navbar */
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        padding: 0;
+        margin: 0;
+        z-index: 999; /* Ensure it is above other content */
+    }
+
+    .navbar .nav-links li {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .navbar .nav-links a {
+        color: #fff;
+        font-size: 18px;
+    }
+
+    .navbar .nav-toggle {
+        display: block; /* Tombol untuk toggle menu */
+    }
+}
+
+/* Section Styling */
+.section {
+    padding: 60px 0;
+    margin-top: 60px; /* Disesuaikan dengan tinggi navbar */
+    text-align: center;
+}
+
+
+section#home, section#about, section#services section#portfolio, section#contact { 
+    height: auto; /* Menjadikan setiap section seukuran layar */
+}
+
+#home {
+    height: 100vh; /* Ini sudah mengatur tinggi sebesar 100% layar */
+    min-height: 100vh; /* Ini akan membuat elemen lebih besar dari layar penuh jika diperlukan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('./images/hero-1.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    padding: 100px 0; /* Tambah padding atas dan bawah */
+}
+
+#home .cta-button {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+
+.section-title {
+    border-bottom: 3px solid rgb(46, 111, 252);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.section-padding {
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
+/* Typography */
+h2 {
+    font-size: 3.5em;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#portfolio {
+    padding-bottom: 70px; /* Tambahkan padding bawah */
+    margin-bottom: 70px;  /* Tambahkan margin bawah */
+}
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Menyesuaikan gambar dengan area tanpa distorsi */
+}
+
+
+.portfolio-item {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block; /* Agar kotak hanya sebesar konten */
+    transition: transform 0.3s ease;
+}
+
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+}
+
+/* Section padding for top and bottom */
+#proses {
+    padding: 50px 0;
+    background-color: #f9f9f9; /* Light background color */
+}
+
+/* Styling for the section title */
+#proses .section-title {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+#proses .section-title h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Line below the section title */
+#proses .section-title .line {
+    width: 60px;
+    height: 4px;
+    background-color: #007bff; /* Adjust to your theme color */
+    margin: 0 auto;
+}
+
+/* Individual process box styling */
+#proses h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #007bff; /* Matching with title line */
+}
+
+/* Paragraph styling inside the process box */
+#proses p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Box spacing */
+#proses .col-md-4 {
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+    margin-bottom: 20px;
+}
+
+/* Padding and margin adjustment for mobile devices */
+@media (max-width: 768px) {
+    #proses {
+        padding: 50px 20px;
+    }
+
+    #proses h3 {
+        font-size: 1.25rem;
+    }
+
+    #proses p {
+        font-size: 0.9rem;
+    }
+}
+/* Styling for the Proses Section */
+#proses {
+    background-color: #f4f4f4; /* Light background for contrast */
+    padding: 80px 0;
+    color: #333;
+}
+
+#proses .section-title {
+    margin-bottom: 50px;
+}
+
+#proses .section-title h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+    position: relative;
+}
+
+#proses .section-title .line {
+    width: 80px;
+    height: 4px;
+    background-color: #007bff; /* Primary accent color */
+    margin: 20px auto 0;
+}
+
+#proses .portfolio-item {
+    background-color: #007bff; /* Change the background of each portfolio item */
+    border-radius: 10px;
+    padding: 30px;
+    color: #fff; /* Text color inside */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#proses .portfolio-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff; /* Title color inside */
+}
+
+#proses .portfolio-item p {
+    font-size: 1rem;
+    color: #f8f9fa; /* Slightly lighter text color for better contrast */
+}
+
+#proses .portfolio-item:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Extra margin between the items */
+#proses .portfolio-item + .portfolio-item {
+    margin-top: 30px;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    #proses h1.display-4 {
+        font-size: 2rem;
+    }
+
+    #proses .portfolio-item {
+        padding: 20px;
+    }
+}
+
+/* Section Reviews */
+#reviews {
+    padding: 50px 0;
+    background-color: #343a40; /* Warna bg-dark */
+    color: #f8f9fa; /* Warna teks untuk bg-dark */
+}
+
+#reviews .section-title {
+    margin-bottom: 40px;
+}
+
+#reviews .section-title h1 {
+    font-size: 2.5rem;
+    color: #fff; /* Warna judul putih */
+}
+
+#reviews .line {
+    width: 50px;
+    height: 3px;
+    background-color: #007bff; /* Garis bawah putih */
+    margin: 15px auto;
+}
+
+#reviews p.text {
+    font-size: 1rem;
+    color: #adb5bd; /* Warna teks abu-abu terang */
+}
+
+.review {
+    text-align: left;
+}
+
+.review-head {
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Bayangan */
+}
+
+.review-person h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff; /* Nama berwarna putih */
+}
+
+.review-person small {
+    font-size: 0.9rem;
+    color: #ced4da; /* Warna teks abu-abu */
+}
+
+.text-warning i {
+    color: #ffc107; /* Warna bintang kuning */
+}
+
+.review-head p {
+    font-size: 1rem;
+    color: #212529; /* Warna teks dalam review (teks gelap) */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #reviews .section-title h1 {
+        font-size: 2rem;
+    }
+
+    #reviews p.text {
+        font-size: 0.9rem;
+    }
+}
+
+/* Section Team */
+#team {
+    padding: 100px 0;
+    background-color: #ffffff; /* Warna background gelap */
+}
+
+#team .section-title {
+    margin-bottom: 40px;
+}
+
+#team .section-title h1 {
+    font-size: 2.5rem;
+    color: #000000; 
+}
+
+#team .line {
+    width: 50px;
+    height: 3px;
+    background-color: #368ade; 
+    margin: 15px auto;
+}
+
+#team p.text {
+    font-size: 1rem;
+    color: #000000; /* Warna teks abu-abu terang */
+}
+
+/* Team Member Card */
+.team-member {
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-member img {
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+    object-fit: cover;
+}
+
+.image-zoom:hover img {
+    transform: scale(1.1); /* Efek zoom pada gambar saat hover */
+}
+
+.team-member-content {
+    margin-top: 20px;
+}
+
+.team-member-content h4 {
+    font-size: 1.5rem;
+    color: #f8f9fa; /* Warna nama anggota tim */
+    font-weight: bold;
+}
+
+.team-member-content p {
+    font-size: 1rem;
+    color: #adb5bd; /* Warna deskripsi anggota tim */
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #team .section-title h1 {
+        font-size: 2rem;
+    }
+
+    #team p.text {
+        font-size: 0.9rem;
+    }
+
+    .team-member-content h4 {
+        font-size: 1.3rem;
+    }
+
+    .team-member-content p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Section Blog */
+#blog {
+    padding: 40px ;
+}
+
+#blog .section-title {
+    margin-bottom: 40px;
+}
+
+#blog .section-title h1 {
+    font-size: 2.5rem;
+    color: #ffffff; /* Warna teks putih untuk judul */
+}
+
+#blog .line {
+    width: 50px;
+    height: 3px;
+    background-color: #007bff; /* Garis bawah dengan warna primer */
+    margin: 15px auto;
+}
+
+#blog p {
+    font-size: 1rem;
+    color: #adb5bd; /* Warna teks abu-abu terang */
+}
+
+#blog .image-zoom {
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.4s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bayangan gambar */
+}
+
+#blog .image-zoom img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Membuat gambar lebih halus di sudut */
+    transition: transform 0.4s ease; /* Efek zoom pada gambar */
+}
+
+#blog .image-zoom:hover img {
+    transform: scale(1.05); /* Efek zoom ketika di-hover */
+}
+
+#blog h5 {
+    font-size: 1.25rem;
+    color: #ffffff; /* Warna teks putih untuk judul artikel */
+    margin-top: 20px;
+    transition: color 0.3s ease;
+}
+
+#blog p {
+    color: #adb5bd; /* Warna teks abu-abu terang untuk paragraf */
+    margin-top: 10px;
+}
+
+#blog h5:hover {
+    color: #007bff; /* Mengubah warna judul artikel saat di-hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #blog .section-title h1 {
+        font-size: 2rem;
+    }
+
+    #blog h5 {
+        font-size: 1.1rem;
+    }
+
+    #blog .image-zoom img {
+        width: 100%;
+    }
+}
+
+/* Section Contact */
+#contact {
+    padding: 100px 0;
+    background-color: #f8f9fa; /* Warna latar belakang terang */
+}
+
+#contact .section-title {
+    margin-bottom: 40px;
+}
+
+#contact .section-title h1 {
+    font-size: 2.5rem;
+    color: #343a40; /* Warna teks gelap untuk judul */
+}
+
+#contact .line {
+    width: 50px;
+    height: 3px;
+    background-color: #007bff; /* Garis bawah dengan warna primer */
+    margin: 15px auto;
+}
+
+#contact p {
+    font-size: 1rem;
+    color: #6c757d; /* Warna teks abu-abu */
+}
+
+/* Form Styling */
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+}
+
+form .form-control {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+form .form-control:focus {
+    border-color: #007bff; /* Border warna primer saat input focus */
+    box-shadow: none;
+}
+
+form .form-group textarea {
+    resize: none;
+}
+
+form button {
+    background-color: #007bff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3; /* Warna saat hover pada tombol */
+}
+
+/* Map */
+iframe {
+    border-radius: 8px;
+    border: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #contact .section-title h1 {
+        font-size: 2rem;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    iframe {
+        height: 250px;
+    }
+
+    form .form-control {
+        font-size: 0.9rem;
+    }
+
+    form button {
+        font-size: 1rem;
+    }
+}
+
+
+/* Form Styling */
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #ff6600;
+    outline: none;
+}
+
+form button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Memberikan ruang antara kolom */
+    flex-wrap: wrap; /* Membuat kolom responsif */
+    max-width: 1200px; /* Membatasi lebar maksimum konten footer */
+    margin: 0 auto; /* Menempatkan konten di tengah */
+    padding: 0 20px; /* Padding untuk responsif di perangkat kecil */
+}
+
+.footer-section {
+    flex: 1; /* Setiap kolom memiliki lebar yang sama */
+    padding: 0 20px; /* Memberikan ruang di sekitar konten setiap kolom */
+    margin-bottom: 30px; /* Jarak bawah untuk perangkat kecil */
+}
+
+.footer-section h3 {
+    font-size: 1.5rem; /* Ukuran font judul */
+    margin-bottom: 20px; /* Jarak antara judul dan konten */
+    color: #ffffff;
+    border-bottom: 2px solid #4e57d4; /* Garis bawah pada judul */
+    display: inline-block;
+}
+
+.footer-section p {
+    font-size: 0.9rem; /* Ukuran font paragraf */
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none; /* Menghilangkan bullet list */
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #cccccc; /* Warna link */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #4e57d4; /* Warna link saat hover */
+}
+
+.footer-section.contact p {
+    margin: 5px 0; /* Jarak vertikal antar baris kontak */
+}
+
+
+footer {
+    margin-top: auto; /* Ini akan mendorong footer ke bagian bawah */
+    background-color: #111; /* Sesuaikan dengan warna footer */
+    padding: 20px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.footer-bottom {
+    padding: 10px 0;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+.footer-bottom p {
+    margin: 0;
+    color: #cccccc; /* Warna teks copyright */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Membuat kolom vertikal pada layar kecil */
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Media Queries */
+
+/* Phones (max-width: 768px) */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .navbar .logo {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    .portfolio-grid {
+        display: block;
+    }
+
+    .portfolio-item {
+        margin-bottom: 20px;
+    }
+
+    .container {
+        width: 90%;
+    }
+}
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .navbar .logo {
+        font-size: 1.3em;
+    }
+
+    .navbar .nav-links li {
+        margin-left: 15px;
+    }
+
+    h2 {
+        font-size: 2.2em;
+    }
+
+    h3 {
+        font-size: 1.4em;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .portfolio-item {
+        margin-bottom: 20px;
+    }
+}
+
+/* Laptops (max-width: 1280px) */
+@media (max-width: 1280px) {
+    .navbar .nav-links li {
+        margin-left: 18px;
+    }
+
+    h2 {
+        font-size: 2.3em;
+    }
+
+    h3 {
+        font-size: 1.45em;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .portfolio-item {
+        margin-bottom: 20px;
+    }
+}
+
+/* About Section */
+.about-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.about-image img {
+    width: 100%; /* Gambar akan mengisi area kolom */
+    border-radius: 10px;
+    object-fit: cover;
+    max-height: 500px;
+}
+
+.about-content h1, .about-content h4 {
+    font-weight: bold;
+    color: #333;
+}
+
+.about-content p {
+    font-size: 1.2em;
+    text-align: left; /* Rata kanan */
+    color: #555;
+}
+
+/* Responsif untuk layar lebih kecil */
+@media (max-width: 768px) {
+    .about-image {
+        margin-bottom: 30px; /* Beri jarak bawah untuk gambar di layar kecil */
+    }
+    
+    .about-content p {
+        text-align: center; /* Teks akan diratakan ke tengah di layar kecil */
+        font-size: 1.1em;
+    }
+
+    .about-content h1, .about-content h4 {
+        text-align: center; /* Heading juga dipusatkan di layar kecil */
+    }
+}
+
+/* Services Section */
+#services {
+    padding: 50px;
+    padding-bottom: 60px; /* Menambah padding bawah */
+    color: rgb(0, 0, 0); /* Warna teks */
+}
+
+.section-title h1 {
+    font-size: 2.5rem;
+    color: #000000; /* Warna teks judul */
+    margin-bottom: 20px;
+}
+
+.section-title .line {
+    width: 100px;
+    height: 4px;
+    background-color: #4e57d4; /* Warna garis bawah judul */
+    margin: 0 auto 20px auto;
+}
+
+.text {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    color: #ccc; /* Warna teks paragraf deskripsi */
+}
+
+.service {
+    background-color: #809aaf; /* Warna background kotak service */
+    border-radius: 10px; /* Membuat kotak dengan sudut melengkung */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transisi untuk hover */
+    color: #fff; /* Warna teks dalam kotak */
+    position: relative;
+    overflow: hidden;
+}
+
+.service:hover {
+    transform: translateY(-10px) scale(1.05); /* Efek hover dengan pergerakan dan sedikit perbesaran */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Efek shadow saat hover */
+}
+
+/* Animasi tambahan untuk background efek */
+.service::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(78, 87, 212, 0.2); /* Warna efek animasi */
+    transition: all 0.4s ease;
+    z-index: 0;
+}
+
+.service:hover::before {
+    top: 0; /* Animasi bergerak dari atas ke bawah saat hover */
+}
+
+.iconbox {
+    font-size: 3rem; /* Ukuran ikon lebih besar */
+    color: #4e57d4; /* Warna ikon */
+    position: relative;
+    z-index: 1;
+}
+
+.service h5 {
+    font-size: 1.5rem;
+    color: #fff; /* Warna judul service */
+    margin-top: 20px;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.service p {
+    color: #ccc; /* Warna teks paragraf service */
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .service {
+        padding: 30px; /* Mengurangi padding pada layar kecil */
+    }
+
+    .section-title h1 {
+        font-size: 2rem; /* Ukuran judul lebih kecil pada layar kecil */
+    }
+
+    .iconbox {
+        font-size: 2.5rem; /* Ukuran ikon lebih kecil pada layar kecil */
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title h1 {
+        font-size: 1.75rem; /* Ukuran judul lebih kecil lagi pada layar sangat kecil */
+    }
+
+    .iconbox {
+        font-size: 2rem; /* Ukuran ikon lebih kecil lagi pada layar sangat kecil */
+    }
+}
+
+#technologi {
+    padding-bottom: 70px; /* Tambahkan padding bawah */
+    margin-bottom: 70px;  /* Tambahkan margin bawah */
+    background-color: #f4f4f4;
+}
+
+.techno-content {
+    position: relative;
+    display: flex;
+    gap: 30px;
+}
+
+.tech-icon {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tech-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Animasi masuk */
+.tech-icon {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.tech-icon:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.tech-icon:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.tech-icon:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* Animasi Fade In Up */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .techno-content {
+        flex-direction: column;
+    }
+
+    .tech-icon {
+        margin-bottom: 20px;
+    }
+}
+
+main {
+    flex: 1;
+}
