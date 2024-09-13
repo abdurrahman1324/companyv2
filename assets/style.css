@@ -148,6 +148,7 @@ p {
 }
 
 #portfolio {
+    padding: 70px;
     padding-bottom: 70px; /* Tambahkan padding bawah */
     margin-bottom: 70px;  /* Tambahkan margin bawah */
 }
@@ -339,6 +340,10 @@ p {
     color: #adb5bd; /* Warna teks abu-abu terang */
 }
 
+#reviews {
+    padding: 80px;
+    padding-bottom: 70px;
+}
 .review {
     text-align: left;
 }
@@ -462,7 +467,8 @@ p {
 
 /* Section Blog */
 #blog {
-    padding: 40px ;
+    padding: 80px ;
+    padding-bottom: 70px;
 }
 
 #blog .section-title {
@@ -865,8 +871,8 @@ footer {
 
 /* Services Section */
 #services {
-    padding: 50px;
-    padding-bottom: 60px; /* Menambah padding bawah */
+    padding: 70px;
+    padding-bottom: 70px; /* Menambah padding bawah */
     color: rgb(0, 0, 0); /* Warna teks */
 }
 
@@ -967,7 +973,8 @@ footer {
 }
 
 #technologi {
-    padding-bottom: 70px; /* Tambahkan padding bawah */
+    padding: 80px;
+    padding-bottom: 80px; /* Tambahkan padding bawah */
     margin-bottom: 70px;  /* Tambahkan margin bawah */
     background-color: #f4f4f4;
 }
