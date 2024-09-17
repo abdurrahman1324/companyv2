@@ -45,22 +45,24 @@ body {
     color: #66b2ff; /* Warna teks saat di-hover */
 }
 
+
 /* Mobile Styles */
 @media (max-width: 768px) {
     .navbar .nav-links {
         display: flex;
         flex-direction: column;
         position: fixed;
-        top: 60px; /* Adjust based on the height of your navbar */
-        left: 0;
+        top: 60px; /* Adjusted to match the navbar height */
+        right: -100%; /* Mulai dari luar layar, di kanan */
         width: 100%;
         background-color: rgba(0, 0, 0, 0.9);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        padding: 0;
-        margin: 0;
-        z-index: 999; /* Ensure it is above other content */
+        height: 100vh; /* Memastikan menu mengisi layar */
+        transition: right 0.3s ease; /* Efek transisi dari kanan ke kiri */
+        z-index: 999;
+    }
+
+    .navbar .nav-links.active {
+        right: 0; /* Saat aktif, menu bergeser ke tampilan layar */
     }
 
     .navbar .nav-links li {
@@ -697,16 +699,6 @@ form button {
     margin-bottom: 10px;
 }
 
-.footer-section ul li a {
-    color: #cccccc; /* Warna link */
-    text-decoration: none; /* Menghilangkan garis bawah */
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-
-.footer-section ul li a:hover {
-    color: #4e57d4; /* Warna link saat hover */
-}
 
 .footer-section.contact p {
     margin: 5px 0; /* Jarak vertikal antar baris kontak */
@@ -1034,6 +1026,68 @@ footer {
 
     .tech-icon {
         margin-bottom: 20px;
+    }
+}
+
+/* Section Partner */
+.partner-section {
+    padding: 80px 0;
+    background-color: #f1f1f1; /* Warna latar belakang section */
+    text-align: center;
+}
+
+.partner-section .section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333; /* Warna judul */
+    margin-bottom: 20px;
+}
+
+.partner-section .section-subtitle {
+    font-size: 1.2rem;
+    color: #777; /* Warna subtitle */
+    margin-bottom: 50px;
+}
+
+.partner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsif grid */
+    gap: 40px; /* Jarak antar item */
+    justify-items: center; /* Pusatkan item grid */
+}
+
+.partner-item {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk efek hover */
+}
+
+.partner-item img {
+    max-width: 100%;
+    max-height: 100%;
+    filter: grayscale(100%); /* Efek grayscale untuk logo */
+    transition: filter 0.3s ease; /* Transisi pada hover */
+    opacity: 0.8; /* Mengurangi kecerahan logo */
+}
+
+.partner-item:hover img {
+    filter: grayscale(0%); /* Menghapus grayscale saat hover */
+    opacity: 1; /* Meningkatkan kecerahan */
+}
+
+.partner-item:hover {
+    transform: scale(1.1); /* Efek memperbesar item saat hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Efek bayangan saat hover */
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .partner-item {
+        width: 120px;
+        height: 120px; /* Ukuran logo diperkecil di layar kecil */
     }
 }
 
