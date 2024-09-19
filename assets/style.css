@@ -964,17 +964,26 @@ footer {
     }
 }
 
+/* Section Technologi */
 #technologi {
     padding: 80px;
-    padding-bottom: 80px; /* Tambahkan padding bawah */
-    margin-bottom: 70px;  /* Tambahkan margin bawah */
+    padding-bottom: 80px;
+    margin-bottom: 70px;
     background-color: #f4f4f4;
 }
 
 .techno-content {
-    position: relative;
     display: flex;
+    justify-content: space-around; /* Untuk meratakan ikon */
+    align-items: center; /* Pusatkan ikon secara vertikal */
+    text-align: center;
     gap: 30px;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column; /* Untuk memastikan teks ada di bawah ikon */
+    align-items: center; /* Teks dan ikon berada di tengah */
 }
 
 .tech-icon {
@@ -1021,7 +1030,7 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
     .techno-content {
-        flex-direction: column;
+        flex-direction: column; /* Ikon disusun vertikal */
     }
 
     .tech-icon {
@@ -1031,15 +1040,13 @@ footer {
 
 /* Section Partner */
 .partner-section {
-    padding: 80px 0;
+    padding: 80px;
+    padding-bottom: 100px;
     background-color: #f1f1f1; /* Warna latar belakang section */
     text-align: center;
 }
 
 .partner-section .section-title {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: #333; /* Warna judul */
     margin-bottom: 20px;
 }
 
